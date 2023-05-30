@@ -16,12 +16,13 @@ export default function RootLayout({ children }) {
         <div className="navbar">
           <Link href="/">홈</Link>
           <Link href="/list">LIST</Link>
+          <Link href="/cart">Cart</Link>
           <Link href="/list/subpage">About</Link>
         </div>
-        <h3> 현대카드 무이자 이벤트 중입니다 </h3>
+        <h3> Next.js 스터디 중입니다 </h3>
         {children}
         <div className="footer">
-          <span>개발 스터디</span>
+          <span> - 개발 병아리 스터디 - </span>
         </div>
       </body>
     </html>

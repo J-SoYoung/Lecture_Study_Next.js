@@ -1,5 +1,5 @@
 body {
-  width: 800px;
+  width: 600px;
   height: 100vh;
   margin: 0 auto;
   box-sizing: border-box;
@@ -14,10 +14,18 @@ h1 {
 h3 {
   margin: 50px auto;
 }
+.food-box {
+  margin-bottom: 100px;
+}
+.food-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .food {
   margin: 20px auto;
   width: 200px;
-  height: 100px;
   background-color: teal;
   color: white;
   font-size: 22px;
@@ -25,9 +33,15 @@ h3 {
   padding: 20px;
   border-radius: 5px;
 }
+.food-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
 .navbar,
 .footer {
-  width: 800px;
+  width: 600px;
   padding: 20px;
   box-sizing: border-box;
   background-color: teal;
@@ -36,7 +50,7 @@ h3 {
   text-align: left;
 }
 .navbar a {
-  margin-right: 10px;
+  margin-right: 15px;
   text-decoration: none;
   color: white;
 }
@@ -46,4 +60,13 @@ h3 {
 }
 .footer span {
   color: white;
+  display: block;
+  text-align: center;
+}
+.cart-item {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid grey;
+  line-height: 0px;
 }
