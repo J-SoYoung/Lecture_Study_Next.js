@@ -1,0 +1,10 @@
+.title-box {
+  width: 800px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid teal;
+  text-align: center;
+}
+.title {
+  color: teal;
+}
