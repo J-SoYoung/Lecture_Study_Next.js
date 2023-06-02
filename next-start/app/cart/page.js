@@ -5,7 +5,7 @@ import Test from "./test";
 export default function Cart() {
   let 장바구니 = ["tomato", "pasta"];
   return (
-    <div>
+    <div className="cart-box">
       <h1 className="title">
         Cart - {name},{age}
       </h1>

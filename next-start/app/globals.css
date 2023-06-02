@@ -1,6 +1,6 @@
 body {
   width: 600px;
-  /* height: 100vh; */
+  height: 100%;
   margin: 0 auto;
   box-sizing: border-box;
   border: 1px solid teal;
@@ -14,9 +14,11 @@ h1 {
 h3 {
   margin: 50px auto;
 }
+.home-box {
+  height: 100vh;
+}
 .food-box {
   margin-bottom: 100px;
-  height: 100% !important;
 }
 .food-list {
   display: flex;
@@ -61,6 +63,11 @@ h3 {
   cursor: pointer;
   font-size: 20px;
 }
+.subpage-box,
+.cart-box {
+  height: 100vh;
+}
+
 .navbar,
 .footer {
   width: 600px;
