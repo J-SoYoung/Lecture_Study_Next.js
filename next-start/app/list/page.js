@@ -1,16 +1,20 @@
-import Image from "next/image";
 // next에서 제공하는 최적화 img컴포넌트를 사용할 수 있음
+// import Image from "next/image";
 // import tomato from "/public/img/tomato.png";
+
+"use client";
+import { useState } from "react";
 
 export default function List() {
   let 상품 = [
-    { name: "Tomato", img: "tomato.png" },
-    { name: "melon", img: "melon.jpg" },
-    { name: "coconut", img: "coconut.png" },
-    { name: "Pasta", img: "pasta.png" },
-    { name: "Egg", img: "egg.jpg" },
-    { name: "Icecream", img: "icecream.jpg" },
+    { name: "Tomato", img: "tomato.png", num: 0 },
+    { name: "melon", img: "melon.jpg", num: 0 },
+    { name: "coconut", img: "coconut.png", num: 0 },
+    { name: "Pasta", img: "pasta.png", num: 0 },
+    { name: "Egg", img: "egg.jpg", num: 0 },
+    { name: "Icecream", img: "icecream.jpg", num: 0 },
   ];
+  const [count, setCount] = useState([0, 0, 0, 0, 0, 0]);
   return (
     <>
       <div className="food-box">
@@ -24,6 +28,27 @@ export default function List() {
                 <h4>
                   {ele.name} : {(idx + 1) * 1000}원
                 </h4>
+                <div className="list-btn-box">
+                  <span>{count[idx]}</span>
+                  <button
+                    className="list-btn"
+                    onClick={() => {
+                      let copy = [...count];
+                      copy[idx]++;
+                      setCount(copy);
+                    }}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="list-btn"
+                    onClick={() => {
+                      setCount(count[idx] - 1);
+                    }}
+                  >
+                    -
+                  </button>
+                </div>
               </div>
             );
           })}
