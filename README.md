@@ -11,4 +11,5 @@ next.js는 SSR과 정적페이지를 구현하는 데 도움을 줍니다. 덕�
 🔎https://github.com/thdud2262/miniPROJECT-03-next.js/tree/master/next-start <br>
 - next.js를 공부하는 이유? next.js의 장점은 무엇인가요?
 - next.js에서 라우팅을 구현해보았고, client-component를 사용해 이벤트를 구현하였습니다.
+- 헤더와 푸터를 layout컴포넌트에 구현하여 각 페이지에서 볼 수 있도록 하였습니다.
 
