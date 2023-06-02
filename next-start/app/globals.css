@@ -1,6 +1,6 @@
 body {
   width: 600px;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0 auto;
   box-sizing: border-box;
   border: 1px solid teal;
@@ -16,6 +16,7 @@ h3 {
 }
 .food-box {
   margin-bottom: 100px;
+  height: 100% !important;
 }
 .food-list {
   display: flex;
@@ -38,6 +39,27 @@ h3 {
   height: 150px;
   object-fit: cover;
   border-radius: 4px;
+}
+.list-btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list-btn-box span {
+  display: block;
+  margin-right: 10px;
+}
+.list-btn {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 20px;
 }
 .navbar,
 .footer {
