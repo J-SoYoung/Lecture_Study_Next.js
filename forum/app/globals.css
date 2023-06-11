@@ -101,3 +101,18 @@ button {
 .edit-input > p {
   margin: 5px 0;
 }
+.navbar{
+  height: 55px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 16px;
+  box-sizing: border-box;
+  border-bottom: 1px solid lightgray;
+  font-size: 18px;
+  color: tomato;
+}
+.navbar > a {
+  display: block;
+  margin-right: 16px;
+}

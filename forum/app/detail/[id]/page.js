@@ -1,4 +1,4 @@
-import DetailLink from "../DetailLink";
+import LinkButton from "@/app/components/LinkButton";
 import { connectDB } from "@/util/database.js";
 import { ObjectId } from "mongodb";
 
@@ -15,7 +15,8 @@ export default async function Detail(props) {
         <p>{result.title}</p>
         <p>{result.content}</p>
       </div>
-      <DetailLink> 메인으로 이동 </DetailLink>
+      <LinkButton url={"/"}>메인으로 이동</LinkButton>
+      <LinkButton url={"/list"}>뒤로가기</LinkButton>
     </div>
   );
 }
