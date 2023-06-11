@@ -2,6 +2,7 @@ import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
 
 export default async function handler(req, res) {
+  console.log(req.body);
   if (req.method === "POST") {
     if (req.body.title === "" || req.body.content === "") {
       // return res.status(500).json("빈칸을 채워주세요");
