@@ -1,18 +1,18 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import React from "react";
 
-export default function DetailLink() {
+export default function DetailLink( {children}) {
+  console.log(children);
   let router = useRouter();
 
   return (
-    <button
+    <button className='router-btn'
       onClick={() => {
-        router.push("/list");
+        router.push("/");
       }}
     >
-      페이지 이동
+      {children}
     </button>
   );
 }
