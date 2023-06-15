@@ -11,21 +11,20 @@ export default function ListItem({ result }) {
   // 검색엔진 노출을 위한 컴포넌트로 구성하려면 props를 넘기는 것이 좋다
   // },[])
   const router = useRouter();
+
   const handleClickDelete = (id, event) => {
-    // console.log(id);
-    // fetch("/api/post/delete", {
-    //   method: "POST",
-    //   body: id.toString(),
-    // })
-    //   .then((r) => r.json())
-    //   .then((result) => {
-    //     //성공시 실행할코드
-    //     event.target.parentElement.style.opacity = 0;
-    //     setTimeout(()=>{
-    //       // event.target.parentElement.style.display='none'
-    //       router.refresh();
-    //     },1000)
-    //   });
+    fetch(`/api/post/delete?id=${id}`)
+      .then((r) => r.json())
+      .then((result) => {
+        alert(result)
+        event.target.parentElement.style.opacity = 0;
+        setTimeout(() => {
+          event.target.parentElement.style.display = "none";
+        }, 1000);
+      });
+    // fetch("/api/post/delete", { method: "POST", body: id }).then(
+    //   router.refresh()
+    // );
   };
 
   return (
