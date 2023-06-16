@@ -1,6 +1,4 @@
 "use client";
-
-import { useEffect } from "react";
 import LinkButton from "../components/LinkButton";
 import { useRouter } from "next/navigation";
 
@@ -16,7 +14,7 @@ export default function ListItem({ result }) {
     fetch(`/api/post/delete?id=${id}`)
       .then((r) => r.json())
       .then((result) => {
-        alert(result)
+        alert(result);
         event.target.parentElement.style.opacity = 0;
         setTimeout(() => {
           event.target.parentElement.style.display = "none";
@@ -33,7 +31,9 @@ export default function ListItem({ result }) {
         return (
           <div className="list-item" key={idx}>
             <h4>{list.title}</h4>
-            <LinkButton url={`detail/${list._id}`}>상세페이지 이동</LinkButton>
+            <LinkButton url={`detail/${list._id}`}>
+              상세페이지 이동
+            </LinkButton>
             <LinkButton url={`edit/${list._id}`}>✒️게시글 수정</LinkButton>
 
             {/* ajax를 통해 서버 요청 */}
