@@ -1,5 +1,4 @@
 import { connectDB } from "@/util/database";
-import LinkButton from "../components/LinkButton";
 import ListItem from "./ListItem";
 
 export const dynamic = "force-dynamic";
@@ -15,12 +14,12 @@ export default async function List() {
 
   return (
     <div>
-      <div className="title-box">
-        <h1>게시판 페이지입니다</h1>
-      </div>
-      <div className="list-bg">
-        <ListItem result={modifiedResult} />
-      </div>
+        <div className="title-box">
+          <h1>게시판 페이지입니다</h1>
+        </div>
+        <div className="list-bg">
+          <ListItem result={modifiedResult} />
+        </div>
     </div>
   );
 }
