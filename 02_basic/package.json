@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/express": "^4.17.17",
     "@types/mongodb": "^4.0.7",
     "@types/node": "20.2.6",
     "@types/react": "18.2.10",
