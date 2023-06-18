@@ -2,7 +2,7 @@ import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
 import { PropsIdType } from "@/util/typeSettings";
 import LinkMoveButton from "@/app/components/LinkMoveButton";
-import FunctButton from "@/app/components/DeleteButton";
+import DeleteButton from "@/app/components/DeleteButton";
 
 export default async function Detail(props: PropsIdType) {
   let db = (await connectDB).db("forum");
@@ -18,7 +18,7 @@ export default async function Detail(props: PropsIdType) {
         <p>{result && result.content}</p>
         <div className="detail-btn-box">
           <LinkMoveButton url={`/edit/${result && result._id}`} text={"수정"} />
-          <FunctButton id={result && result._id} />
+          <DeleteButton id={result && result._id} />
         </div>
       </div>
     </div>

@@ -43,7 +43,6 @@ export default function Write() {
         />
         <button type="submit">입력</button>
       </form> */}
-
       <form className="input-box" action="/api/post/new" method="POST">
         <input name="title" placeholder="글 제목을 입력하세요" />
         <input name="content" placeholder="내용을 입력하세요" />

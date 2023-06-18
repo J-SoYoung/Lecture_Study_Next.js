@@ -109,6 +109,18 @@ button {
 detail-btn-box > button {
   margin: 4px;
 }
+.form-box {
+  max-width: 1000px;
+}
+.button-box{
+  display:flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.submit-btn {
+  background: teal;
+  color: white;
+}
 @media (max-width: 800px) {
   .list-bg {
     width: 100%;

@@ -8,11 +8,11 @@ export default function FunctButton({ id }: any) {
 
   const handleClickDelete = (event: React.MouseEvent<HTMLButtonElement>) => {
     fetch(`/api/post/delete?id=${id}`)
-    .then((r)=>r.json())
-    .then((result)=>{
-      alert(result)
-      router.push('/')
-    })
+      .then((r) => r.json())
+      .then((result) => {
+        alert(result);
+        router.push("/");
+      });
   };
 
   return (
