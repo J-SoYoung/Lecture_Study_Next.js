@@ -1,8 +1,11 @@
 import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
-import DetailLink from "./DetailLink";
+import { PropsIdType } from "@/util/typeSettings";
+import LinkMoveButton from "@/app/components/LinkMoveButton";
+import FunctButton from "@/app/components/DeleteButton";
 
-export default async function Detail(props: any) {
+export default async function Detail(props: PropsIdType) {
+  console.log("상세페이지", props);
   let db = (await connectDB).db("forum");
   let result = await db
     .collection("post")
@@ -11,12 +14,13 @@ export default async function Detail(props: any) {
   return (
     <div>
       <div className="detila-box">
-        <h1>상세페이지</h1>
+        <h1>상세 페이지</h1>
         <h4>{result && result.title}</h4>
         <p>{result && result.content}</p>
-        <DetailLink>
-          <p>메인 페이지로 이동</p>
-        </DetailLink>
+        <div className="detail-btn-box">
+          <LinkMoveButton url={`/edit/${result && result._id}`} text={"수정"} />
+          <FunctButton id={result && result._id} />
+        </div>
       </div>
     </div>
   );
