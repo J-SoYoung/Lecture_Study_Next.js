@@ -1,9 +1,7 @@
 import { connectDB } from "@/util/database";
 
 export default async function handler(req: any, res: any) {
-  console.log(req.body);
   // if (res.method == "POST") {
-  // console.log(123);
   // return res.status(200).json("처리 완료");
   // }
 

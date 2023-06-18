@@ -5,7 +5,6 @@ import LinkMoveButton from "@/app/components/LinkMoveButton";
 import FunctButton from "@/app/components/DeleteButton";
 
 export default async function Detail(props: PropsIdType) {
-  console.log("상세페이지", props);
   let db = (await connectDB).db("forum");
   let result = await db
     .collection("post")
