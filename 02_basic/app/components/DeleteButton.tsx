@@ -12,6 +12,7 @@ export default function FunctButton({ id }: any) {
       .then((result) => {
         alert(result);
         router.push("/");
+        router.refresh();
       });
   };
 

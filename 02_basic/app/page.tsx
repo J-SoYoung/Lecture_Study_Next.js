@@ -1,6 +1,8 @@
 import { connectDB } from "@/util/database";
 import LinkMoveButton from "./components/LinkMoveButton";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   let db = (await connectDB).db("forum");
   let result = await db.collection("post").find().toArray();
