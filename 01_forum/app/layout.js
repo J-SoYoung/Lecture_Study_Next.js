@@ -16,7 +16,6 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   // 서버컴포넌트에서 사용가능
   const session = await getServerSession(authOptions);
-  // console.log(session);
 
   return (
     <html lang="en">

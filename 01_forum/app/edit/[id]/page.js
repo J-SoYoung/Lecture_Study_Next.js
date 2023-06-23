@@ -22,7 +22,8 @@ export default async function Edit(props) {
             <input name="content" defaultValue={result.content} />
           </div>
           <div className="edit-input" style={{ display: "none" }}>
-            Data정보 <input name="_id" defaultValue={result._id.toString()} />
+            <input name="_id" defaultValue={result._id.toString()} />
+            <input name="author" defaultValue={result.author} />
           </div>
           <div className="button-box">
             <button type="submit">수정완료</button>

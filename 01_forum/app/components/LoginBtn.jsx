@@ -3,7 +3,6 @@ import React from "react";
 import { signIn, signOut } from "next-auth/react";
 
 export default function LoginBtn({ login }) {
-  // console.log(login);
   return (
     <div className = 'login-btn'>
       {login ? (
