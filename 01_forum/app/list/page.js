@@ -1,9 +1,14 @@
 import { connectDB } from "@/util/database";
 import ListItem from "./ListItem";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 export const dynamic = "force-dynamic";
 
 export default async function List() {
+  const session = await getServerSession(authOptions);
+  console.log('리스트page',session);
+
   const client = await connectDB;
   const db = client.db("forum");
   const result = await db.collection("post").find().toArray();
@@ -14,12 +19,12 @@ export default async function List() {
 
   return (
     <div>
-        <div className="title-box">
-          <h1>게시판 페이지입니다</h1>
-        </div>
-        <div className="list-bg">
-          <ListItem result={modifiedResult} />
-        </div>
+      <div className="title-box">
+        <h1>게시판 페이지입니다</h1>
+      </div>
+      <div className="list-bg">
+        <ListItem result={modifiedResult} session={session?.user?.email}/>
+      </div>
     </div>
   );
 }
