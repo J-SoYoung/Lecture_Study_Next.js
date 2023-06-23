@@ -24,9 +24,9 @@ a {
   padding: 20px;
   margin-bottom: 5px;
   box-shadow: rgb(224, 224, 224) 0px 2px 4px 0px;
-/* 삭제 animation */
+  /* 삭제 animation */
   opacity: 1;
-  transition: all 1s; 
+  transition: all 1s;
 }
 .list-item h4 {
   font-size: 20px;
@@ -104,18 +104,36 @@ button {
 .edit-input > p {
   margin: 5px 0;
 }
-.navbar{
+.navbar {
+  max-width: 1000px;
   height: 55px;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
   padding-left: 16px;
   box-sizing: border-box;
   border-bottom: 1px solid lightgray;
   font-size: 18px;
-  color: tomato;
 }
-.navbar > a {
+.navbar div {
+  display: flex;
+}
+.navbar .navbar-left {
+  justify-content: flex-start;
+  align-items: center;
+}
+.navbar .navbar-left a {
   display: block;
-  margin-right: 16px;
+  margin-right: 8px;
+}
+.navbar .navbar-right {
+  justify-content: flex-end;
+  align-items: center;
+}
+.login-btn{
+  margin-right: 8px;
+  height: 50px;
+  padding: 4px 8px;
+  box-sizing: border-box;
 }
