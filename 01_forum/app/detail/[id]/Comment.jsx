@@ -1,10 +1,13 @@
 "use client";
-import { PHASE_PRODUCTION_BUILD } from "next/dist/shared/lib/constants";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-export default function Comment({ postId }) {
+export default function Comment({ postId, user }) {
+  const router = useRouter();
   const [comment, setComment] = useState("");
   const [commentList, setCommentList] = useState([]);
+
+  const loginUser = user?.user.email;
 
   useEffect(() => {
     fetch(`/api/comments/list?postId=${postId}`)
@@ -40,6 +43,18 @@ export default function Comment({ postId }) {
     }
   };
 
+  const handleCommentDelete = (id) => {
+    fetch(`/api/comments/delete?id=${id}`, {
+      method: "POST",
+      body: postId,
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        alert("댓글이 삭제되었습니다");
+        setCommentList([...result]);
+      });
+  };
+
   return (
     <div className="comment-box">
       <h2>댓글작성</h2>
@@ -62,7 +77,17 @@ export default function Comment({ postId }) {
                   <p>{list.user}</p>
                   <p>{list.comment}</p>
                 </div>
-                <button>삭제</button>
+                {loginUser === list.user ? (
+                  <button
+                    onClick={() => {
+                      handleCommentDelete(list._id);
+                    }}
+                  >
+                    삭제
+                  </button>
+                ) : (
+                  ""
+                )}
               </div>
             );
           })
