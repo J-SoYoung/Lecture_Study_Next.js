@@ -7,8 +7,7 @@ export const dynamic = "force-dynamic";
 
 export default async function List() {
   const session = await getServerSession(authOptions);
-  console.log('리스트page',session);
-
+ 
   const client = await connectDB;
   const db = client.db("forum");
   const result = await db.collection("post").find().toArray();
