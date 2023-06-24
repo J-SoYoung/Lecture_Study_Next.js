@@ -1,6 +1,7 @@
 import LinkButton from "@/app/components/LinkButton";
 import { connectDB } from "@/util/database.js";
 import { ObjectId } from "mongodb";
+import Comment from "./Comment";
 
 export default async function Detail(props) {
   let db = (await connectDB).db("forum");
@@ -10,13 +11,16 @@ export default async function Detail(props) {
 
   return (
     <div className="detail-box">
-      <h2>상세페이지</h2>
-      <div>
-        <p>{result.title}</p>
-        <p>{result.content}</p>
+      <h1>상세페이지</h1>
+      <div className="detail-content">
+        <p>제목 : {result.title}</p>
+        <p>내용 : {result.content}</p>
       </div>
-      <LinkButton url={"/"}>메인으로 이동</LinkButton>
-      <LinkButton url={"/list"}>뒤로가기</LinkButton>
+      <Comment postId={result._id}/>
+      <div className="detail-btn-box">
+        <LinkButton url={"/"}>메인으로 이동</LinkButton>
+        <LinkButton url={"/list"}>뒤로가기</LinkButton>
+      </div>
     </div>
   );
 }
