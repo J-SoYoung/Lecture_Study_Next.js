@@ -3,13 +3,7 @@ import LinkButton from "../components/LinkButton";
 import { useRouter } from "next/navigation";
 
 export default function ListItem({ result, session }) {
-  // useEffect(()=>{
-  // 서버에 get요청 날려서 DB게시물 가져옴
-  // 검색노출이 잘 안됨, why? useEffect는 렌더링 후 실행되기 때문에.
-  // 검색엔진 노출을 위한 컴포넌트로 구성하려면 props를 넘기는 것이 좋다
-  // },[])
   const router = useRouter();
-  console.log('로그인유저',session)
 
   const handleClickDelete = (id, author, event) => {
     fetch(`/api/post/delete?id=${id}&author=${author}`)
