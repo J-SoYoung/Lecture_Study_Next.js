@@ -27,6 +27,7 @@ export default async function RootLayout({ children }) {
           <Link href="/write">작성페이지</Link>
           </div>
           <div className = 'navbar-right'>
+            <Link href='/register'>로그인 페이지로 이동</Link>
             <LoginBtn login={session ? true : false} />
             {session && <p>{session.user.name}님 반갑습니다</p>}
           </div>
