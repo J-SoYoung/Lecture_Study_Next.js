@@ -10,8 +10,6 @@ export default function Comment({ postId, user }) {
 
   const loginUser = user?.user.email;
 
-  const loginUser = user?.user.email;
-
   useEffect(() => {
     fetch(`/api/comments/list?postId=${postId}`)
       .then((response) => response.json())
