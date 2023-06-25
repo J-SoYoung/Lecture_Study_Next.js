@@ -1,11 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Comment({ postId, user }) {
   const [comment, setComment] = useState("");
   const [commentList, setCommentList] = useState([]);
   const [editIndex, setEditIndex] = useState(-1);
   const [commentEdit, setCommentEdit] = useState("");
+
+  const loginUser = user?.user.email;
 
   const loginUser = user?.user.email;
 
@@ -55,6 +58,7 @@ export default function Comment({ postId, user }) {
       });
   };
 
+
   const handleCommentEdit = (id) => {
     fetch(`/api/comments/edit?id=${id}&postId=${postId}`, {
       method: "POST",
@@ -67,6 +71,7 @@ export default function Comment({ postId, user }) {
         setCommentList([...result])
       });
   };
+
 
   return (
     <div className="comment-box">
@@ -103,6 +108,7 @@ export default function Comment({ postId, user }) {
                     <p>{list.comment}</p>
                   )}
                 </div>
+
                 {loginUser === list.user && editIndex === idx ? (
                   <div>
                     <button
@@ -137,6 +143,7 @@ export default function Comment({ postId, user }) {
                       수정
                     </button>
                   </div>
+
                 )}
               </div>
             );
