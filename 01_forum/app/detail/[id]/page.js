@@ -4,6 +4,7 @@ import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import Comment from "./Comment";
+import { notFound } from "next/navigation";
 
 export default async function Detail(props) {
   const loginUser = await getServerSession(authOptions);
@@ -12,6 +13,8 @@ export default async function Detail(props) {
     .collection("post")
     .findOne({ _id: new ObjectId(props.params.id) });
   const author = result.author;
+
+  if (result === null) return notFound();
 
   return (
     <div className="detail-box">
