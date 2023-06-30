@@ -106,10 +106,10 @@ button {
   box-sizing: border-box;
   border: 1px solid gray;
 }
-.detail-box .detail-content img{
+.detail-box .detail-content img {
   width: 300px;
   margin-right: 10px;
-  border-radius: 8px; 
+  border-radius: 8px;
 }
 .detail-box .comment-box {
   margin-top: 30px;
@@ -216,4 +216,20 @@ button {
   margin: 50px auto;
   text-align: center;
   color: teal;
+}
+.darkmode-icon {
+  display: block;
+  padding: 0;
+  cursor: pointer;
+  font-size: 25px;
+}
+.dark-mode .navbar {
+  background-color: black;
+}
+.dark-mode .navbar a {
+  color: white;
+}
+
+.light {
+  background-color: white;
 }
