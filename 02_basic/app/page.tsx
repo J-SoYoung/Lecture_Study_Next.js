@@ -11,10 +11,14 @@ export default async function Home() {
     <>
       <div className="list-bg">
         {result.map((list, idx) => {
+          console.log(list)
           return (
             <div className="list-item" key={idx}>
-              <h4>{list.title}</h4>
-              <p>{list.contnet}</p>
+              <div>
+                <h4>{list.title}</h4>
+                <p>{list.content}</p>
+                <img src={list.imgSrc} />
+              </div>
               <LinkMoveButton
                 url={`detail/${list._id}`}
                 text={"상세페이지로 이동"}

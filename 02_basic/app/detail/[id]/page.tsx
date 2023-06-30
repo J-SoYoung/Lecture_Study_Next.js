@@ -17,8 +17,11 @@ export default async function Detail(props: PropsIdType) {
         <h1>상세 페이지</h1>
         <div className="detail-content">
           <div className="content-text">
-            <h4>{result && result.title}</h4>
-            <p>{result && result.content}</p>
+            <img src={result && result.imgSrc} />
+            <div>
+              <h4>{result && result.title}</h4>
+              <p>{result && result.content}</p>
+            </div>
           </div>
           <div className="content-btn">
             <LinkMoveButton

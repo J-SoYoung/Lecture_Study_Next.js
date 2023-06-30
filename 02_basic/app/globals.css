@@ -27,7 +27,12 @@
 }
 .input-box {
   margin: 0 auto;
-  width: 300px;
+  width: 400px;
+}
+.input-box img {
+  width: 100%;
+  margin: 4px 0;
+  border-radius: 8px;
 }
 h1 {
   color: teal;
@@ -72,7 +77,7 @@ button {
   background: white;
   border-radius: 10px;
   padding: 20px;
-  margin-bottom: 5px;
+  margin: 8px;
   box-shadow: rgb(224, 224, 224) 0px 2px 4px 0px;
 }
 .list-item h4 {
@@ -88,6 +93,11 @@ button {
   text-align: right;
   margin-top: 30px;
 }
+.list-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 .router-btn {
   cursor: pointer;
 }
@@ -99,11 +109,20 @@ button {
 }
 .detila-box .detail-content {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   border: 1px solid teal;
   padding: 30px;
   box-sizing: border-box;
+}
+.detila-box .detail-content .content-text {
+  display: flex;
+  margin-bottom: 10px;
+}
+.detila-box .detail-content .content-text img {
+  width: 250px;
+  margin-right: 16px;
+  border-radius: 8px;
 }
 .detail-content .content-btn {
   display: flex;
