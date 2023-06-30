@@ -17,7 +17,8 @@ export default function ListItem({ result, session }) {
         // }, 1000);
       });
   };
-
+  result.sort((a,b)=> b.createDate - a.createDate)
+  
   return (
     <>
       {result.map((list, idx) => {
@@ -25,18 +26,24 @@ export default function ListItem({ result, session }) {
           <div className="list-item" key={idx}>
             <h4>{list.title}</h4>
             <div>
-              <img src={list.imgSrc}/>
+              <img src={list.imgSrc} />
             </div>
             <LinkButton url={`detail/${list._id}`}>상세페이지 이동</LinkButton>
-            { session == list.author && <LinkButton url={`edit/${list._id}?author=${session}`}>✒️게시글 수정</LinkButton> }
-            { session == list.author &&  <span
+            {session == list.author && (
+              <LinkButton url={`edit/${list._id}?author=${session}`}>
+                ✒️게시글 수정
+              </LinkButton>
+            )}
+            {session == list.author && (
+              <span
                 style={{ cursor: "pointer" }}
                 onClick={(event) => {
                   handleClickDelete(list._id, list.author, event);
                 }}
               >
-              🗑️게시글 삭제
-            </span>}
+                🗑️게시글 삭제
+              </span>
+            )}
           </div>
         );
       })}

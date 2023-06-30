@@ -8,6 +8,7 @@ export default function Write() {
   const [imgSrc, setImgSrc] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+
   const [imgFilename, setImgFilename] = useState("");
   const [file, setFile] = useState("");
 
@@ -19,8 +20,9 @@ export default function Write() {
     }
     let imgRes = await fetch(`api/post/image?file=${imgFilename}`);
     imgRes = await imgRes.json();
-    
-    //S3 업로드
+
+    // S3 업로드    
+    // entries를 통해 주어진 객체를 [key, value]를 배열로 반환
     const formData = new FormData();
     Object.entries({ ...imgRes.fields, file }).forEach(([key, value]) => {
       formData.append(key, value);
@@ -33,17 +35,18 @@ export default function Write() {
       title: title,
       content: content,
       imgSrc: `${imageUpload.url}/${imgFilename}`,
-    };  
+      createDate: new Date().getTime()
+    };
     let res = fetch(`/api/post/new`, {
       method: "POST",
       body: JSON.stringify(newData),
       headers: { "Content-Type": "application/json" },
     })
-    .then((res)=> res.json())
-    .then((result)=>{
-      router.push('/list')
-    })
-
+      .then((res) => res.json())
+      .then((result) => {
+        router.push("/list");
+        router.refresh();
+      });
   };
 
   return (
@@ -60,6 +63,13 @@ export default function Write() {
             name="content"
             onChange={(e) => setContent(e.target.value)}
             placeholder="내용을 입력하세요 "
+          />
+          <input
+            style={{ display: "none" }}
+            name="time"
+            onChange={() => {
+              setMakeTime(new Date().getTime());
+            }}
           />
           <input
             type="file"
