@@ -33,6 +33,11 @@ a {
   font-weight: 800;
   margin: 0;
 }
+.list-item > div > img {
+  width: 50%;
+  border-radius: 8px;
+  margin: 10px auto;
+}
 .list-item p {
   color: grey;
   margin: 5px 0px;
@@ -46,6 +51,11 @@ a {
   border: 1px solid gray;
   padding: 20px;
   box-sizing: border-box;
+}
+.form-box .img-box {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 .button-box {
   display: flex;
@@ -89,12 +99,18 @@ button {
   box-sizing: border-box;
 }
 .detail-box .detail-content {
+  display: flex;
+  justify-content: flex-start;
   margin: 0 auto;
   padding: 16px;
   box-sizing: border-box;
   border: 1px solid gray;
 }
-
+.detail-box .detail-content img{
+  width: 300px;
+  margin-right: 10px;
+  border-radius: 8px; 
+}
 .detail-box .comment-box {
   margin-top: 30px;
 }
@@ -133,7 +149,7 @@ button {
   box-sizing: border-box;
   border-radius: 4px;
 }
-.detail-box .comment-view .comment-list .comment-btn button{
+.detail-box .comment-view .comment-list .comment-btn button {
   margin: 4px;
 }
 .detail-box .detail-content p {
@@ -194,4 +210,10 @@ button {
   height: 50px;
   padding: 4px 8px;
   box-sizing: border-box;
+}
+.loading-page {
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+  color: teal;
 }

@@ -20,8 +20,11 @@ export default async function Detail(props) {
     <div className="detail-box">
       <h1>상세페이지</h1>
       <div className="detail-content">
-        <p>제목 : {result.title}</p>
-        <p>내용 : {result.content}</p>
+        <img src={result.imgSrc}/>
+        <div>
+          <p>제목 : {result.title}</p>
+          <p>내용 : {result.content}</p>
+        </div>
       </div>
       <Comment postId={result._id.toString()} user={loginUser} />
       <div className="detail-btn-box">

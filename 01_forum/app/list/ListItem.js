@@ -24,6 +24,9 @@ export default function ListItem({ result, session }) {
         return (
           <div className="list-item" key={idx}>
             <h4>{list.title}</h4>
+            <div>
+              <img src={list.imgSrc}/>
+            </div>
             <LinkButton url={`detail/${list._id}`}>상세페이지 이동</LinkButton>
             { session == list.author && <LinkButton url={`edit/${list._id}?author=${session}`}>✒️게시글 수정</LinkButton> }
             { session == list.author &&  <span

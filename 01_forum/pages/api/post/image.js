@@ -1,7 +1,7 @@
 import aws from "aws-sdk";
 
 export default async function handler(req, res) {
-  console.log(req.query);
+  console.log("이미지", req.query);
   aws.config.update({
     accessKeyId: process.env.ACCESS_KEY,
     secretAccessKey: process.env.SECRET_KEY,
@@ -18,6 +18,6 @@ export default async function handler(req, res) {
       ["content-length-range", 0, 1048576], //파일용량 1MB 까지 제한
     ],
   });
-
+  console.log(url);
   res.status(200).json(url);
 }
