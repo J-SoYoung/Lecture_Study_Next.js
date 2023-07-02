@@ -12,7 +12,6 @@ export default async function handler(req, res) {
     postId: req.query.postId,
     user: session.user.email,
   };
-  // console.log("댓글정보-", commentData);
   if (req.method == "POST") {
     try {
       const client = await connectDB;

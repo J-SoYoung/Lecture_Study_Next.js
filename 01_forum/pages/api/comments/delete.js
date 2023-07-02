@@ -2,8 +2,6 @@ import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
 
 export default async function handler(req, res) {
-  console.log("댓글id", req.query);
-  console.log("postid", req.body);
   const client = await connectDB;
   const db = client.db("forum");
   const result = await db

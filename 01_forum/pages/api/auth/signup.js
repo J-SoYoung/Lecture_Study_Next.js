@@ -8,7 +8,6 @@ export default async function handle(req, res) {
 
     const db = (await connectDB).db("forum");
     await db.collection("user_cred").insertOne(req.body);
-    console.log(req.body);
     return res.status(200).json("가입성공");
   }
 }

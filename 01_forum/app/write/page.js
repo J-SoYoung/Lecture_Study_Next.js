@@ -65,13 +65,6 @@ export default function Write() {
             placeholder="내용을 입력하세요 "
           />
           <input
-            style={{ display: "none" }}
-            name="time"
-            onChange={() => {
-              setMakeTime(new Date().getTime());
-            }}
-          />
-          <input
             type="file"
             accept="image"
             onChange={async (e) => {
