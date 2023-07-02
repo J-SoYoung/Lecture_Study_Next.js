@@ -11,7 +11,6 @@ export default async function Home() {
     <>
       <div className="list-bg">
         {result.map((list, idx) => {
-          console.log(list)
           return (
             <div className="list-item" key={idx}>
               <div>

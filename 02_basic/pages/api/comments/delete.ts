@@ -3,9 +3,6 @@ import { ObjectId } from "mongodb";
 import { Request, Response } from "express";
 
 export default async function handler(req: Request, res: Response) {
-  console.log("댓글id", req.query.id);
-  console.log("postid", req.body);
-
   const commentId: string = req.query.id as string;
   const postId: string = req.body as string;
 
