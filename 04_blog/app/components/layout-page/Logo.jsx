@@ -1,5 +1,7 @@
+import styles from './logo.module.css'
+
 export default function Logo() {
   return (
-    <div>logo</div>
+    <div className={styles.logo}>young' next Blog</div>
   )
 }

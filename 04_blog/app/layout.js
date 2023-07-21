@@ -1,4 +1,4 @@
-import NavigatioinBar from "./components/layout-page/NavigatioinBar";
+import NavigationBar from "./components/layout-page/NavigationBar";
 import Logo from "./components/layout-page/Logo";
 import "./globals.css";
 
@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <NavigatioinBar />
+        <NavigationBar />
         {children}
       </body>
     </html>
