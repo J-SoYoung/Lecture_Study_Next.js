@@ -15,7 +15,7 @@ export default function NavigationBar() {
             <Link href="./contact">contact</Link>
           </li>
           <li>
-            <Link href="./posts">posts</Link>
+            <Link href="./posts/thdud">posts</Link>
           </li>
         </ul>
       </nav>
