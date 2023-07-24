@@ -8,11 +8,10 @@ export default function PostGrid(props) {
     <div>
       <p>post Grid</p>
       <ul className={styles.grid}>
-        <PostItem />
-
-        {/* {posts.map((post) => (
+        {/* <PostItem /> */}
+        {posts?.map((post) => (
           <PostItem key={post.slug} post={post} />
-        ))} */}
+        ))}
       </ul>
     </div>
   );
