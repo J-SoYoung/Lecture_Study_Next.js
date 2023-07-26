@@ -36,6 +36,7 @@ next.js는 SSR과 정적페이지를 구현하는 데 도움을 줍니다. 덕�
 <br>
 <br>
 
-## MINI(3) todolist - 투두리스트
+## MINI(4) - blog 
+🔎 https://github.com/thdud2262/miniPROJECT-03-next.js/tree/master/04_blog <br>
+- udemy의 next.js 강의를 듣고 공부한 내용입니다. 12버전의 next.js강의를 13버전에 맞게 업그레이드하여 구현 및 공부하고 있습니다.
 
-자바스크립트와 타입스크립트 버전의 투두리스트를 만든 미니프로젝트입니다
