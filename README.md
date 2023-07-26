@@ -24,6 +24,10 @@ next.js는 SSR과 정적페이지를 구현하는 데 도움을 줍니다. 덕�
 - 클라이언트 컴포넌트와 서버컴포넌트를 구현하여 페이지를 구성해보았습니다.
 - github API를 활용해 로그인 기능을 만들어 자신이 작성한 게시글만 수정,삭제 기능을 추가하였고, 댓글 기능도 구현하였습니다
 <br>
+
+  ![image](https://github.com/thdud2262/miniPROJECT-03-next.js/assets/85012454/385f944c-16a2-4ed8-b5fd-6e2dfeb0ce34)
+
+<br>
 <br>
 
 ## MINI(2) basic - 기본게시판 ( typescript ) <br>
