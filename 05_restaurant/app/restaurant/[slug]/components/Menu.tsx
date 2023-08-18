@@ -1,6 +1,7 @@
 import MenuCard from "./MenuCard";
 
-function Menu() {
+function Menu({menu}:{menu:Item[]}) {
+
   return ( 
     <main className="bg-white mt-5">
       <div>
@@ -8,7 +9,15 @@ function Menu() {
           <h1 className="font-bold text-4xl">Menu</h1>
         </div>
         <div className="flex flex-wrap justify-between">
-          <MenuCard/>
+          {menu.length ?
+            menu.map((m,idx)=>{
+              return (
+                <MenuCard key={idx} menu={m}/>
+                )
+              })
+              :
+              <p>이 레스토랑은 메뉴가 없습니다</p>
+          }
         </div>
       </div>
     </main>
