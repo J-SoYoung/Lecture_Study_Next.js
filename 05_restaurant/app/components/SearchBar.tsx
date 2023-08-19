@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
-function SearchBar() {
+export default function SearchBar(){
   const router = useRouter();
   const [location, setLocatioin] = useState("");
 
@@ -31,5 +31,3 @@ function SearchBar() {
     </div>
   );
 }
-
-export default SearchBar;
