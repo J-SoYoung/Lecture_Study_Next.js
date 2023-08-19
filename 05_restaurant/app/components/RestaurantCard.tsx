@@ -23,9 +23,9 @@ export default function RestaurantCard({restaurant}:Props){
             <p className="ml-2">{restaurant.reviews?.length} review{restaurant.reviews.length > 1 ? "s":" "}</p>
           </div>
           <div className="flex text-reg font-light capitalize">
-            <p className=" mr-3">Mexican</p>
+            <p className=" mr-3">{restaurant.location.name}</p>
             <Price price={restaurant.price}/>
-            <p>Torontssso</p>
+            <p>{restaurant.cuisine.name}</p>
           </div>
           <p className="text-sm mt-1 font-bold">Booked 3 times today</p>
         </div>
