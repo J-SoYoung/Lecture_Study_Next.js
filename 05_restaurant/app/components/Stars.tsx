@@ -7,7 +7,7 @@ import fullStar from "../../public/icons/full-star.png";
 import halfStar from "../../public/icons/half-star.png";
 import emptyStar from "../../public/icons/empty-star.png";
 
-export default function Stars({ reviews, rating }: { reveiws: Review[], rating?: number }) {
+export default function Stars({ reviews , rating }: { reveiws: Review[], rating?: number }) {
   const reviewRating = rating || calculateReviewRating(reviews);
 
   const renderStars = () => {
