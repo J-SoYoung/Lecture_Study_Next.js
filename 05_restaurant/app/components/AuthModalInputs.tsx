@@ -1,7 +1,7 @@
 interface Props {
   inputs: {
-    firstName: "";
-    lastName: "";
+    first_name: "";
+    last_name: "";
     email: "";
     phone: "";
     city: "";
@@ -19,16 +19,16 @@ export default function AuthModalInputs({ inputs,handleChangeInput,isSignin }: P
           <>
             <input
               type="text"
-              name='firstName'
-              value={inputs.firstName}
+              name='first_name'
+              value={inputs.first_name}
               onChange={handleChangeInput}
               className="border rounded p-2 py-3 w-[49%]"
               placeholder="First Name"
               />
             <input
               type="text"
-              name='lastName'
-              value={inputs.lastName}
+              name='last_name'
+              value={inputs.last_name}
               onChange={handleChangeInput}
               className="border rounded p-2 py-3 w-[49%]"
               placeholder="Last Name"
