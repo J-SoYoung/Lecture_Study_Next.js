@@ -24,8 +24,8 @@ export default function Stars({ reviews , rating }: { reveiws: Review[], rating?
       }
     }
 
-    return stars.map((star) => {
-      return <Image src={star} alt="" className="w-4 h-4 mr-1" />;
+    return stars.map((star,idx) => {
+      return <Image src={star} key={idx}  alt="" className="w-4 h-4 mr-1" />;
     });
   };
 
