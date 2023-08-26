@@ -9,7 +9,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
 
-  // middleware에서 token을 확인하고 있으니 bearerToken의 유효성을 따로 검증할 필요X 
+  // middleware에서 token을 확인하고 있으니 bearerToken의 유효성을 따로 검증할 필요X
   const bearerToken = req.headers["authorization"] as string;
   const token = bearerToken.split(" ")[1];
 

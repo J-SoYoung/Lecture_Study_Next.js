@@ -4,6 +4,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
+import { CircularProgress, Alert } from "@mui/material";
 import AuthModalInputs from "./AuthModalInputs";
 import useAuth from "@/hooks/useAuth";
 import { AuthenticationContext } from "../context/AuthContext";
@@ -22,10 +23,10 @@ const style = {
 };
 
 export default function AuthModal({ isSignin }: { isSignin: boolean }) {
-  // contextAPI
-  const { error, loading, data, setAuthState } = useContext(AuthenticationContext)
   // Auth hooks
   const {signin} = useAuth()
+  // contextAPI
+  const { error, loading, data, setAuthState } = useContext(AuthenticationContext)
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -75,7 +76,7 @@ export default function AuthModal({ isSignin }: { isSignin: boolean }) {
 
   const handleClick = () => {
     if(isSignin){
-      signin({email:inputs.email, password: inputs.password})
+      signin({email:inputs.email, password: inputs.password}, handleClose)
     }
   }
 
@@ -96,34 +97,45 @@ export default function AuthModal({ isSignin }: { isSignin: boolean }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
+        
         <Box sx={style}>
-          <div className="p-2 h-[500px]">
-            <div className="uppercase font-bold text-center p-2 border-b mb-2">
-              <p className="text-sm">
-                {renderContent("Sign in", "Create Account")}
-              </p>
-              <div className="m-auto ">
-                <h2 className="text-2xl font-lignt text-center my-2">
-                  {renderContent(
-                    "RadiantRestro _ login",
-                    "환영합니다. RadiantRestro의 서비스 회원가입 합니다"
-                  )}
-                </h2>
-                <AuthModalInputs
-                  inputs={inputs}
-                  handleChangeInput={handleChangeInput}
-                  isSignin={isSignin}
-                />
-                <button
-                  className="uppercase bg-red-600 w-full p-3 text-white rounded text-sm mb-5 disabled:bg-gray-400"
-                  disabled={disabled}
-                  onClick={handleClick}
-                >
-                  {renderContent("Sign In", "Create Account")}
-                </button>
-              </div>
+          {loading? 
+          <div className='py-30 px-2 h-[600px] flex justify-center'>
+            <CircularProgress />
+          </div>
+        :
+        <div className="p-2 h-[600px]">
+          {error? 
+          <Alert severity="error" className='mb-9'>{error}</Alert>
+          :
+          null}
+          <div className="uppercase font-bold text-center p-2 border-b mb-2">
+            <p className="text-sm">
+              {renderContent("Sign in", "Create Account")}
+            </p>
+            <div className="m-auto ">
+              <h2 className="text-2xl font-lignt text-center my-2">
+                {renderContent(
+                  "RadiantRestro _ login",
+                  "환영합니다. RadiantRestro의 서비스 회원가입 합니다"
+                )}
+              </h2>
+              <AuthModalInputs
+                inputs={inputs}
+                handleChangeInput={handleChangeInput}
+                isSignin={isSignin}
+              />
+              <button
+                className="uppercase bg-red-600 w-full p-3 text-white rounded text-sm mb-5 disabled:bg-gray-400"
+                disabled={disabled}
+                onClick={handleClick}
+              >
+                {renderContent("Sign In", "Create Account")}
+              </button>
             </div>
           </div>
+        </div>
+        }
         </Box>
       </Modal>
     </div>
