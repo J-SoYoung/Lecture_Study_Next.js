@@ -9,7 +9,6 @@ import AuthModalInputs from "./AuthModalInputs";
 import useAuth from "@/hooks/useAuth";
 import { AuthenticationContext } from "../context/AuthContext";
 
-
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
