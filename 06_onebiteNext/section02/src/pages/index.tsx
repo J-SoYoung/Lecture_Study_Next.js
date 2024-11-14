@@ -3,14 +3,15 @@ import style from "./index.module.css";
 import BookItem from "@/components/BookItem";
 
 import SearchableLayout from "@/components/SearchableLayout";
-import { InferGetServerSidePropsType } from "next";
+import { InferGetStaticPropsType } from "next";
 import fetchBooks from "@/lib/fetch-books";
 import fetchRandomBooks from "@/lib/fetch-random-books";
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   // 직렬 방식의 fetch호출이 이루어지므로 시간이 걸림
   // const allBooks = await fetchBooks();
   // const recoBooks = await fetchRandomBooks();
+  console.log("인덱스페이지");
   const [allBooks, recoBooks] = await Promise.all([
     fetchBooks(),
     fetchRandomBooks(),
@@ -22,8 +23,7 @@ export const getServerSideProps = async () => {
 export default function Home({
   allBooks,
   recoBooks,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log(allBooks);
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className={style.container}>
       <section>
