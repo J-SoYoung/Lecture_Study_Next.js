@@ -17,7 +17,7 @@ export const getStaticProps = async () => {
     fetchRandomBooks(),
   ]);
 
-  return { props: { allBooks, recoBooks }, revalidate: 3 };
+  return { props: { allBooks, recoBooks } };
 };
 
 export default function Home({
